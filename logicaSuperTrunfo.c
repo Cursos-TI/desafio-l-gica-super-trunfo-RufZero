@@ -14,27 +14,27 @@ int main() {
     float Densidade_populacional;
     float PIB_per_Capita;
     float SuperPoder;
-    
+    int Comparacao;
 
-    printf("Digite o Estado da Carta: \n");
+    printf("Digite o Estado da Carta 1: \n");
     scanf("%19s", Estado); 
 
-    printf("Digite o Código da Carta: \n");
+    printf("Digite o Código da Carta 1: \n");
     scanf("%19s", Codigo_da_Carta);
 
-    printf("Digite o Nome da Cidade: \n");
+    printf("Digite o Nome da Cidade 1: \n");
     scanf("%19s", Nome_da_Cidade);
 
-    printf("Digite a População da Cidade: \n");
+    printf("Digite a População da Cidade 1: \n");
     scanf("%d", &Populacao);
 
-    printf("Digite a Área da Cidade: \n");
+    printf("Digite a Área da Cidade 1: \n");
     scanf("%f", &Area);
 
-    printf("Digite o PIB da Cidade: \n");
+    printf("Digite o PIB da Cidade 1: \n");
     scanf("%f", &PIB);
 
-    printf("Digite a Quantidade de Pontos Turísticos: \n");
+    printf("Digite a Quantidade de Pontos Turísticos da Carta 1: \n");
     scanf("%d", &Numero_de_Pontos_Turisticos);
 
     Densidade_populacional = Populacao / Area;
@@ -57,26 +57,27 @@ int main() {
     float Densidade_populacional1;
     float PIB_per_Capita1;
     float SuperPoder1;
-
-    printf("Digite o Estado da Carta: \n");
+    
+    
+    printf("Digite o Estado da Carta 2: \n");
     scanf("%19s", Estado1); 
 
-    printf("Digite o Código da Carta: \n");
+    printf("Digite o Código da Carta 2: \n");
     scanf("%19s", Codigo_da_Carta1);
 
-    printf("Digite o Nome da Cidade: \n");
+    printf("Digite o Nome da Cidade 2: \n");
     scanf("%19s", Nome_da_Cidade1);
 
-    printf("Digite a População da Cidade: \n");
+    printf("Digite a População da Cidade 2: \n");
     scanf("%d", &Populacao1);
 
-    printf("Digite a Área da Cidade: \n");
+    printf("Digite a Área da Cidade 2: \n");
     scanf("%f", &Area1);
 
-    printf("Digite o PIB da Cidade: \n");
+    printf("Digite o PIB da Cidade 2: \n");
     scanf("%f", &PIB1);
 
-    printf("Digite a Quantidade de Pontos Turísticos: \n");
+    printf("Digite a Quantidade de Pontos Turísticos da Carta 2: \n");
     scanf("%d", &Numero_de_Pontos_Turisticos1);
 
     Densidade_populacional1 = Populacao1 / Area1;
@@ -119,76 +120,142 @@ int main() {
 
     printf("*** Comparação das Cartas ***\n");
 
-    printf("\n"); // Pular uma linha para a comparação de cartas
+    printf("\n"); // Pular uma linha
 
-    if (Populacao > Populacao1)
-    {
+    printf("1. Comparar População:\n");
+    printf("2. Comparar Área:\n");
+    printf("3. Comparar PIB:\n");
+    printf("4. Comparar Número de Pontos Turísticos:\n");
+    printf("5. Comparar Densidade Populacional:\n");
+    printf("6. Comparar PIB per Capita:\n");
+    printf("7. Comparar Super Poder:\n");
+
+    printf("\n"); // Pular uma linha
+
+    printf("Escola uma opção:\n");
+    scanf("%d", &Comparacao);
+
+    printf("\n"); // Pular uma linha
+
+    switch (Comparacao) {
+
+    case 1:
+    
+      if (Populacao > Populacao1)
+      {
         printf("Carta 1: %s: População: %d\nCarta 2: %s: População: %d\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, Populacao, Nome_da_Cidade1, Populacao1);
-    }
-    else{
+      } 
+      else if (Populacao < Populacao1)
+      {
         printf("Carta 1: %s: População: %d\nCarta 2: %s: População: %d\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, Populacao, Nome_da_Cidade1, Populacao1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+        printf("Carta 1: %s: População: %d\nCarta 2: %s: População: %d\nRusultado: Houve um Empate!\n", Nome_da_Cidade, Populacao, Nome_da_Cidade1, Populacao1);
+      }
+      break;
 
-if (Area > Area1)
-    {
+      case 2:
+    
+      if (Area > Area1)
+      {
         printf("Carta 1: %s: Área: %.2f\nCarta 2: %s: Área: %.2f\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, Area, Nome_da_Cidade1, Area1);
-    }
-    else{
+      } 
+      else if (Area < Area1)
+      {
         printf("Carta 1: %s: Área: %.2f\nCarta 2: %s: Área: %.2f\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, Area, Nome_da_Cidade1, Area1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+        printf("Carta 1: %s: Área: %.2f\nCarta 2: %s: Área: %.2f\nRusultado: Houve um Empate!\n", Nome_da_Cidade, Area, Nome_da_Cidade1, Area1);
+      }
+      break;
 
-    if (PIB > PIB1)
-    {
+      case 3:
+    
+      if (PIB > PIB1)
+      {
         printf("Carta 1: %s: PIB: %.2f\nCarta 2: %s: PIB: %.2f\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, PIB, Nome_da_Cidade1, PIB1);
-    }
-    else{
+      } 
+      else if (PIB < PIB1)
+      {
         printf("Carta 1: %s: PIB: %.2f\nCarta 2: %s: PIB: %.2f\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, PIB, Nome_da_Cidade1, PIB1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+        printf("Carta 1: %s: PIB: %.2f\nCarta 2: %s: PIB: %.2f\nRusultado: Houve um Empate!\n", Nome_da_Cidade, PIB, Nome_da_Cidade1, PIB1);
+      }
+      break;
 
-    if (Numero_de_Pontos_Turisticos > Numero_de_Pontos_Turisticos1)
-    {
+      case 4:
+    
+      if (Numero_de_Pontos_Turisticos > Numero_de_Pontos_Turisticos1)
+      {
         printf("Carta 1: %s: Número de Pontos Turísticos: %d\nCarta 2: %s: Número de Pontos Turísticos: %d\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, Numero_de_Pontos_Turisticos, Nome_da_Cidade1, Numero_de_Pontos_Turisticos1);
-    }
-    else{
+      } 
+      else if (Numero_de_Pontos_Turisticos < Numero_de_Pontos_Turisticos1)
+      {
         printf("Carta 1: %s: Número de Pontos Turísticos: %d\nCarta 2: %s: Número de Pontos Turísticos: %d\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, Numero_de_Pontos_Turisticos, Nome_da_Cidade1, Numero_de_Pontos_Turisticos1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+       printf("Carta 1: %s: Número de Pontos Turísticos: %d\nCarta 2: %s: Número de Pontos Turísticos: %d\nRusultado: Houve um Empate!\n", Nome_da_Cidade, Numero_de_Pontos_Turisticos, Nome_da_Cidade1, Numero_de_Pontos_Turisticos1);
+      }
+      break;
 
-    if (Densidade_populacional < Densidade_populacional1)
-    {
+      case 5:
+    
+      if (Densidade_populacional < Densidade_populacional1)
+      {
         printf("Carta 1: %s: Densidade Populacional: %.2f\nCarta 2: %s: Densidade Populacional: %.2f\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, Densidade_populacional, Nome_da_Cidade1, Densidade_populacional1);
-    }
-    else{
+      } 
+      else if (Densidade_populacional > Densidade_populacional1)
+      {
         printf("Carta 1: %s: Densidade Populacional: %.2f\nCarta 2: %s: Densidade Populacional: %.2f\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, Densidade_populacional, Nome_da_Cidade1, Densidade_populacional1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+        printf("Carta 1: %s: Densidade Populacional: %.2f\nCarta 2: %s: Densidade Populacional: %.2f\nRusultado: Houve um Empate!\n", Nome_da_Cidade, Densidade_populacional, Nome_da_Cidade1, Densidade_populacional1);
+      }
+      break;
 
-    if (PIB_per_Capita > PIB_per_Capita1)
-    {
+      case 6:
+    
+      if (PIB_per_Capita > PIB_per_Capita1)
+      {
         printf("Carta 1: %s: PIB per Capita: %.2f\nCarta 2: %s: PIB per Capita: %.2f\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, PIB_per_Capita, Nome_da_Cidade1, PIB_per_Capita1);
-    }
-    else{
+      } 
+      else if (PIB_per_Capita < PIB_per_Capita1)
+      {
         printf("Carta 1: %s: PIB per Capita: %.2f\nCarta 2: %s: PIB per Capita: %.2f\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, PIB_per_Capita, Nome_da_Cidade1, PIB_per_Capita1);
-    }
-   
-    printf("\n"); // Pular uma linha para ficar mais organizado
+      }
+        else 
+      {
+        printf("Carta 1: %s: PIB per Capita: %.2f\nCarta 2: %s: PIB per Capita: %.2f\nRusultado: Houve um Empate!\n", Nome_da_Cidade, PIB_per_Capita, Nome_da_Cidade1, PIB_per_Capita1);
+      }
+      break;
 
-    if (SuperPoder > SuperPoder1)
-    {
+      case 7:
+    
+      if (SuperPoder > SuperPoder1)
+      {
         printf("Carta 1: %s: Super Poder: %.2f\nCarta 2: %s: Super Poder: %.2f\nRusultado: Carta 1 Venceu!\n", Nome_da_Cidade, SuperPoder, Nome_da_Cidade1, SuperPoder1);
-    }
-    else{
+      } 
+      else if (PIB_per_Capita < PIB_per_Capita1)
+      {
         printf("Carta 1: %s: Super Poder: %.2f\nCarta 2: %s: Super Poder: %.2f\nRusultado: Carta 2 Venceu!\n", Nome_da_Cidade, SuperPoder, Nome_da_Cidade1, SuperPoder1);
-    }
+      }
+        else 
+      {
+        printf("Carta 1: %s: Super Poder: %.2f\nCarta 2: %s: Super Poder: %.2f\nRusultado: Houve um Empate!\n", Nome_da_Cidade, SuperPoder, Nome_da_Cidade1, SuperPoder1);
+      }
+      break;
 
+      default:
+
+      printf("Opção inválida. Tente novamente.\n");
+}
 
     return 0; 
 }
+
